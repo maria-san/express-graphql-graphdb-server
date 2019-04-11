@@ -1,0 +1,32 @@
+{
+    "name": "express-graphql-graphdb-server",
+    "version": "1.0.0",
+    "description": "Express GraphQL server with Neo4j",
+    "main": "index.js",
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "keywords": [
+        "express",
+        "neo4j",
+        "graphql",
+        "graphdb"
+    ],
+    "author": "Maria Erika Santos",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.4",
+        "express": "^4.16.4",
+        "express-graphql": "^0.6.12",
+        "graphql-tools": "^4.0.4",
+        "indicative": "^5.0.8",
+        "isnumeric": "^0.3.3",
+        "jsonwebtoken": "^8.5.1",
+        "merge-graphql-schemas": "^1.5.7",
+        "moment": "^2.24.0",
+        "neo4j-driver": "^1.7.0",
+        "request": "^2.88.0",
+        "scan-dir-recursive": "^1.0.11"
+    }
+}

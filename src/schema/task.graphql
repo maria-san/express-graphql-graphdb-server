@@ -1,0 +1,51 @@
+type Task {
+    id: ID!
+    start: String!
+    end: String!
+    status: TaskStatus!
+    subject: String!
+    description: String!
+}
+
+enum TaskStatus {
+    PENDING
+    COMPLETED
+}
+
+type Query {
+    tasks(
+        token: String!
+        start: String 
+        end: String
+    ): [Task]
+
+    task(
+        token: String!
+        id: ID!
+    ): Task
+}
+
+type Mutation {
+    task_create(
+        token: String!
+        start: String!
+        end: String!
+        subject: String!
+        description: String!
+    ): Task
+
+    task_update(
+        token: String!
+        id: ID!
+        start: String 
+        end: String
+        subject: String 
+        description: String 
+        status: TaskStatus
+    ): Task
+
+    task_delete(
+        token: String!
+        id: ID!
+    ): Boolean
+}

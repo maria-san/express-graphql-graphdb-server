@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "d9ef221f-cf74-49e7-a373-cf41ddbd08b4",
+		"name": "express-graphql-graphdb-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user - user_login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"mutation{ user_login(credential: \\\"eyJhbGciOiJSUzI1NiIsImtpZCI6IjZmNjc4MWJhNzExOTlhNjU4ZTc2MGFhNWFhOTNlNWZjM2RjNzUyYjUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNzY5MzMwOTQzNjA2LWxhYWpvdHNmdDIwazUyOGlvZHQ2dTE5ZGtyMzRvbzVyLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNzY5MzMwOTQzNjA2LWxhYWpvdHNmdDIwazUyOGlvZHQ2dTE5ZGtyMzRvbzVyLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE0MDc0NzM2NTUwODY1NjUyMTkyIiwiaGQiOiJzeW5lcmd5ODhkaWdpdGFsLmNvbSIsImVtYWlsIjoiZXJpa2Euc2FudG9zQHN5bmVyZ3k4OGRpZ2l0YWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJ0dlJHaW9DSl9UazdadVJZMTFrdDFRIiwiaWF0IjoxNTU0OTUxOTc5LCJleHAiOjE1NTQ5NTU1NzksImp0aSI6IjYwYWIyOWM3YjcxODhhZmIyNzVhZjlkOWMxNTY4ZDliOWJkYjRlOTYifQ.cjS7vFR89mzzDsetD0prWXHgm214BfADfXkIhh41b6pwkLwf6WSEO1Jd9nkNDsXGz06fGL9fBIJb4cXesU21U2Rgd2ipFeQTsFLjKA4fIyM_CNAEt3KiBDv8y5x4JV3D8WKN6I8u8KvmAeuw2LmdH90n-ADIvaVMVbDq6xZT-eStbkBaEO2fCxQhDlj8jj9ePRN65pYUiv33gRXQrUUBSKh0dPENfj2RTJ6UGpnx5AsUUgcvfieGvku7Wv5-2qOyaidt76u3fdAFNNjdrevdNY6bPjidA3FTGUxJJBvcocKE8X4MLmQ7MN3ozBXHSSgikEEJtHmlv3fz17d6J7miGQ\\\" ) { token user{ id email } }}\"\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/graph",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task - create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"mutation {task_create (token: \\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWthLnNhbnRvc0BzeW5lcmd5ODhkaWdpdGFsLmNvbSIsImlhdCI6MTU1NDk1MjgzNH0.oX8oOPgqBOE-421g6ki24xnGSRlCN6ub7kMYlMvIlTw\\\"start: \\\"2019-04-01T03:42:20.542Z\\\"end: \\\"2019-04-30T03:42:20.542Z\\\"subject:\\\"To Do\\\"description:\\\"Get a Job\\\") {id start  end status subject description } }\"\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/graph",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task - update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"query\":\"mutation {task_update (token: \\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWthLnNhbnRvc0BzeW5lcmd5ODhkaWdpdGFsLmNvbSIsImlhdCI6MTU1NDk1MjgzNH0.oX8oOPgqBOE-421g6ki24xnGSRlCN6ub7kMYlMvIlTw\\\"id:\\\"5b8a95d0-5c0d-11e9-82ae-9fa02cdc5252\\\"description:\\\"Get a Job ASAP\\\") {id start  end  status  subject  description}}\"}\r\n"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/graph",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task - get",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"query\":\"query {task (token: \\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWthLnNhbnRvc0BzeW5lcmd5ODhkaWdpdGFsLmNvbSIsImlhdCI6MTU1NDk1MjgzNH0.oX8oOPgqBOE-421g6ki24xnGSRlCN6ub7kMYlMvIlTw\\\"id:\\\"5b8a95d0-5c0d-11e9-82ae-9fa02cdc5252\\\") {id start  end  status  subject  description}}\"}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/graph",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task - get all",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"query {tasks (token: \\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWthLnNhbnRvc0BzeW5lcmd5ODhkaWdpdGFsLmNvbSIsImlhdCI6MTU1NDk1MjgzNH0.oX8oOPgqBOE-421g6ki24xnGSRlCN6ub7kMYlMvIlTw\\\") {id start  end  status  subject  description}}\"\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/graph",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task - delete",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"query\":\"mutation {task_delete (token: \\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWthLnNhbnRvc0BzeW5lcmd5ODhkaWdpdGFsLmNvbSIsImlhdCI6MTU1NDk1MjgzNH0.oX8oOPgqBOE-421g6ki24xnGSRlCN6ub7kMYlMvIlTw\\\"id:\\\"5b8a95d0-5c0d-11e9-82ae-9fa02cdc5252\\\")}\"}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/graph",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"graph"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
